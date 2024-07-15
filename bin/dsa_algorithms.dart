@@ -1,11 +1,42 @@
-import 'package:dsa_algorithms/find_second_max.dart';
+import 'package:dsa_algorithms/graph_practice.dart';
 
+// Graph
+/*
+              A
+            /   \
+           B     C
+          / \     \
+          D   E---- F
+
+*/
+// DFS = [A, C, F, B, E, D]
 void main(List<String> arguments) {
-  num? a = findSecondMax(array: [1, 2, 30.0, 40.4, 5]);
-
-  if (a != null) {
-    print('Second max is $a');
-  } else {
-    print('Array is empty');
-  }
+  // DirectedGraph graph = DirectedGraph(
+  //   graph: {
+  //     'A': ['B', 'C'],
+  //     'C': ['F'],
+  //     'D': [],
+  //     'E': ['F'],
+  //     'F': [],
+  //     'B': ['D', 'E'],
+  //   },
+  // );
+  GraphPractice graph = GraphPractice(
+    graphs: {
+      'A': ['B', 'C'],
+      'C': ['F'],
+      'D': [],
+      'E': ['F'],
+      'F': [],
+      'B': ['D', 'E'],
+    },
+    // graphs: {
+    //   "A": ["B", "C"],
+    //   "B": ["D"],
+    //   "D": ["F"],
+    //   "C": ["E"]
+    // },
+  );
+  // graph.printGraph();
+  // graph.depthFirstSearch(start: "A");
 }
